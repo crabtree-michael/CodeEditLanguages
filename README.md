@@ -1,3 +1,6 @@
+<h1> Fork motivation </h1>
+<p> This fork was created to support VisionOS and VisionCode. I am deeply thankful for the original work done by the CodeEdit team. See below for more information on their project </p>
+
 <p align="center">
   <img src="https://github.com/CodeEditApp/CodeEditLanguages/assets/806104/a0ba0924-ed56-483d-b29e-a19134738d7e" height="128" alt="CodeEditLanguages Icon">
   <h1 align="center">CodeEditLanguages</h1>
