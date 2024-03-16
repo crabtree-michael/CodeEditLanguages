@@ -53,7 +53,7 @@ public struct CodeLanguage {
     }
 
     /// The bundle's resource URL
-    internal var resourceURL: URL? = Bundle.module.resourceURL
+    public var resourceURL: URL? = Bundle.module.resourceURL
 
     /// A set of aditional identifiers to use for things like shebang matching.
     public let additionalIdentifiers: Set<String>
@@ -64,9 +64,9 @@ public struct CodeLanguage {
         return Language(language: tsLanguage)
     }
 
-    internal func queryURL(for highlights: String = "highlights") -> URL? {
+    public func queryURL(for highlights: String = "highlights") -> URL? {
         return resourceURL?
-            .appendingPathComponent("Resources/tree-sitter-\(tsName)/\(highlights).scm")
+            .appendingPathComponent("Languages/tree-sitter-\(tsName)/\(highlights).scm")
     }
 
     /// Gets the TSLanguage from `tree-sitter`
@@ -94,6 +94,8 @@ public struct CodeLanguage {
             return tree_sitter_go()
         case .goMod:
             return tree_sitter_gomod()
+        case .graphql:
+            return tree_sitter_graphql()
         case .haskell:
             return tree_sitter_haskell()
         case .html:

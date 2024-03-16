@@ -11,6 +11,7 @@ public extension CodeLanguage {
 
     /// An array of all language structures.
     static let allLanguages: [CodeLanguage] = [
+        .default,
         .agda,
         .bash,
         .c,
@@ -22,6 +23,7 @@ public extension CodeLanguage {
         .elixir,
         .go,
         .goMod,
+        .graphql,
         .haskell,
         .html,
         .java,
@@ -29,7 +31,6 @@ public extension CodeLanguage {
         .jsdoc,
         .json,
         .jsx,
-        .julia,
         .kotlin,
         .lua,
         .markdown,
@@ -49,7 +50,6 @@ public extension CodeLanguage {
         .toml,
         .tsx,
         .typescript,
-        .verilog,
         .yaml,
         .zig
     ]
@@ -119,6 +119,11 @@ public extension CodeLanguage {
         extensions: ["ex", "exs"],
         highlights: ["injections"]
     )
+    
+    /// A language structure for `GraphQL`
+    static let graphql: CodeLanguage = .init(id: .graphql,
+                                             tsName: "graphql",
+                                             extensions: ["graphql", "graphqls"])
 
     /// A language structure for `Go`
     static let go: CodeLanguage = .init(

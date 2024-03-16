@@ -42,6 +42,8 @@ public class TreeSitterModel {
             return goQuery
         case .goMod:
             return goModQuery
+        case .graphql:
+            return graphqlQuery
         case .haskell:
             return haskellQuery
         case .html:
@@ -145,6 +147,10 @@ public class TreeSitterModel {
     /// Query for `Elixir` files.
     public private(set) lazy var elixirQuery: Query? = {
         return queryFor(.elixir)
+    }()
+    
+    public private(set) lazy var graphqlQuery: Query? = {
+        return queryFor(.graphql)
     }()
 
     /// Query for `Go` files.

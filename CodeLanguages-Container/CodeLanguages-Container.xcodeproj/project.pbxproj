@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -45,6 +45,7 @@
 		9D73992D2A5A34BF00CEF6E8 /* TreeSitterVerilog in Frameworks */ = {isa = PBXBuildFile; productRef = 9D73992C2A5A34BF00CEF6E8 /* TreeSitterVerilog */; };
 		9D920B982A93B248004E4451 /* TreeSitterJSDoc in Frameworks */ = {isa = PBXBuildFile; productRef = 9D920B972A93B248004E4451 /* TreeSitterJSDoc */; };
 		9DFDC3662A02D9BE0023B3BC /* TreeSitterMarkdown in Frameworks */ = {isa = PBXBuildFile; productRef = 9DFDC3652A02D9BE0023B3BC /* TreeSitterMarkdown */; };
+		D8DCDF802B9E303400015BDA /* TreeSitterGraphql in Frameworks */ = {isa = PBXBuildFile; productRef = D8DCDF7F2B9E303400015BDA /* TreeSitterGraphql */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +76,7 @@
 				28B3F03C290C363E000CD04D /* TreeSitterGo in Frameworks */,
 				28B3F05D290C3709000CD04D /* TreeSitterSwift in Frameworks */,
 				28B9F7AA290DDAC900245748 /* TreeSitterBash in Frameworks */,
+				D8DCDF802B9E303400015BDA /* TreeSitterGraphql in Frameworks */,
 				28B3F030290C35F9000CD04D /* TreeSitterCPP in Frameworks */,
 				28B3F04E290C3698000CD04D /* TreeSitterJSON in Frameworks */,
 				28B3F033290C3608000CD04D /* TreeSitterCSharp in Frameworks */,
@@ -208,6 +210,7 @@
 				8E7B0EA82A5D9BB60040DDAB /* TreeSitterTOML */,
 				9D920B972A93B248004E4451 /* TreeSitterJSDoc */,
 				6C0B93A72B5DD95500323006 /* TreeSitterCSS */,
+				D8DCDF7F2B9E303400015BDA /* TreeSitterGraphql */,
 			);
 			productName = "CodeLanguages-Container";
 			productReference = 28B3F00C290C207D000CD04D /* CodeLanguages_Container.framework */;
@@ -275,6 +278,7 @@
 				8E7B0EA72A5D9BB60040DDAB /* XCRemoteSwiftPackageReference "tree-sitter-toml" */,
 				9D920B962A93B248004E4451 /* XCRemoteSwiftPackageReference "tree-sitter-jsdoc" */,
 				6C0B93A62B5DD95500323006 /* XCRemoteSwiftPackageReference "tree-sitter-css" */,
+				D8DCDF7E2B9E303400015BDA /* XCLocalSwiftPackageReference "../../tree-sitter-graphql" */,
 			);
 			productRefGroup = 28B3F00D290C207D000CD04D /* Products */;
 			projectDirPath = "";
@@ -458,9 +462,12 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.lukaspistrol.CodeLanguages-Container";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "macosx xros xrsimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 7;
 			};
 			name = Debug;
 		};
@@ -495,8 +502,11 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.lukaspistrol.CodeLanguages-Container";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "macosx xros xrsimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 7;
 			};
 			name = Release;
 		};
@@ -522,6 +532,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		D8DCDF7E2B9E303400015BDA /* XCLocalSwiftPackageReference "../../tree-sitter-graphql" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = "../../tree-sitter-graphql";
+		};
+/* End XCLocalSwiftPackageReference section */
 
 /* Begin XCRemoteSwiftPackageReference section */
 		28171CB629814CD800523F1C /* XCRemoteSwiftPackageReference "tree-sitter-objc" */ = {
@@ -1007,6 +1024,10 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 9DFDC3642A02D9BE0023B3BC /* XCRemoteSwiftPackageReference "tree-sitter-markdown" */;
 			productName = TreeSitterMarkdown;
+		};
+		D8DCDF7F2B9E303400015BDA /* TreeSitterGraphql */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = TreeSitterGraphql;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

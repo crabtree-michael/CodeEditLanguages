@@ -20,6 +20,7 @@ public enum TreeSitterLanguage: String {
     case elixir
     case go
     case goMod
+    case graphql
     case haskell
     case html
     case java

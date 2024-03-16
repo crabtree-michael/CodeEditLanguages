@@ -34,15 +34,18 @@ status "Clean Building CodeLanguages-Container.xcodeproj..."
 xcodebuild \
     -project CodeLanguages-Container/CodeLanguages-Container.xcodeproj \
     -scheme CodeLanguages-Container \
-    -destination "platform=macOS" \
+    -destination "generic/platform=visionOS" \
+    -destination "name=Apple Vision Pro" \
     -derivedDataPath DerivedData \
     -configuration Release \
     $QUIET_FLAG clean build &> $QUIET_OUTPUT
-status "Build complete!"
+status "Build xros complete!"
 
 # set path variables
-PRODUCTS_PATH="$PWD/DerivedData/Build/Products/Release"
+PRODUCTS_PATH="$PWD/DerivedData/Build/Products/Release-xros"
+SIMULATOR_PRODUCTS_PATH="$PWD/DerivedData/Build/Products/Release-xrsimulator"
 FRAMEWORK_PATH="$PRODUCTS_PATH/CodeLanguages_Container.framework"
+SIMULATOR_FRAMEWORK_PATH="$SIMULATOR_PRODUCTS_PATH/CodeLanguages_Container.framework"
 OUTPUT_PATH="CodeLanguagesContainer.xcframework"
 
 # remove previous generated files
@@ -55,6 +58,7 @@ status "Creating CodeLanguagesContainer.xcframework..."
 xcodebuild \
     -create-xcframework \
     -framework "$FRAMEWORK_PATH" \
+    -framework "$SIMULATOR_FRAMEWORK_PATH" \
     -output "$OUTPUT_PATH" &> $QUIET_OUTPUT
 
 # zip the xcframework
@@ -139,9 +143,9 @@ status "Language queries copied to package resources!"
 
 cd $OLD_PWD
 
-if [ -d "$PWD/DerivedData" ]; then
-    status "Cleaning up DerivedData..."
-    rm -rf "$PWD/DerivedData"
-fi
+ if [ -d "$PWD/DerivedData" ]; then
+     status "Cleaning up DerivedData..."
+     rm -rf "$PWD/DerivedData"
+ fi
 
 status "Done!"
