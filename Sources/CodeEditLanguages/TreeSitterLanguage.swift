@@ -11,6 +11,7 @@ import Foundation
 public enum TreeSitterLanguage: String {
     case agda
     case bash
+    case blade
     case c
     case cpp
     case cSharp

@@ -76,6 +76,8 @@ public struct CodeLanguage {
             return tree_sitter_agda()
         case .bash:
             return tree_sitter_bash()
+        case .blade:
+            return tree_sitter_blade()
         case .c:
             return tree_sitter_c()
         case .cpp:

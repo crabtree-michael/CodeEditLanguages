@@ -39,6 +39,11 @@ public extension CodeLanguage {
     /// - Parameter url: The URL of the file.
     /// - Returns: The detected code language, if any.
     private static func detectLanguageUsingURL(url: URL) -> CodeLanguage? {
+        // Special case for `.blade.php
+        if url.absoluteString.hasSuffix("blade.php") {
+            return .blade
+        }
+        
         let fileExtension = url.pathExtension.lowercased()
         let fileName = url.pathComponents.last // should not be lowercase since it has to match e.g. `Dockerfile`
         // This is to handle special file types without an extension (e.g., Makefile, Dockerfile)

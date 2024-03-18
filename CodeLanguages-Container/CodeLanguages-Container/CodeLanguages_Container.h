@@ -24,6 +24,7 @@ extern "C" {
 
 extern TSLanguage *tree_sitter_agda();
 extern TSLanguage *tree_sitter_bash();
+extern TSLanguage *tree_sitter_blade();
 extern TSLanguage *tree_sitter_c();
 extern TSLanguage *tree_sitter_cpp();
 extern TSLanguage *tree_sitter_c_sharp();

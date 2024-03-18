@@ -40,6 +40,34 @@ final class CodeEditLanguagesTests: XCTestCase {
         XCTAssertNotNil(query)
         XCTAssertNotEqual(query?.patternCount, 0)
     }
+    
+// MARK: - Bash
+
+    func test_CodeLanguagePhpBlade() throws {
+        let url = URL(fileURLWithPath: "~/path/to/file.blade.php")
+        let language = CodeLanguage.detectLanguageFrom(url: url)
+
+        XCTAssertEqual(language.id, .blade)
+    }
+    
+    func test_CodeLanguageBlade() throws {
+        let url = URL(fileURLWithPath: "~/path/to/file.blade")
+        let language = CodeLanguage.detectLanguageFrom(url: url)
+
+        XCTAssertEqual(language.id, .blade)
+    }
+
+    func test_FetchQueryBlade() throws {
+        var language = CodeLanguage.blade
+        language.resourceURL = bundleURL
+
+        let data = try Data(contentsOf: language.queryURL!)
+        let query = try? Query(language: language.language!, data: data)
+        XCTAssertNotNil(query)
+        XCTAssertNotEqual(query?.patternCount, 0)
+    }
+    
+
 
 // MARK: - C
 
