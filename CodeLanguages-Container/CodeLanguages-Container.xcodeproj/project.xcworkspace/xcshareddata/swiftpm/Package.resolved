@@ -28,15 +28,6 @@
       }
     },
     {
-      "identity" : "tree-sitter-blade",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/crabtree-michael/tree-sitter-blade",
-      "state" : {
-        "branch" : "main",
-        "revision" : "e92bbe0b51bcbf53c46d32c938458588a8989392"
-      }
-    },
-    {
       "identity" : "tree-sitter-c",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/tree-sitter/tree-sitter-c.git",

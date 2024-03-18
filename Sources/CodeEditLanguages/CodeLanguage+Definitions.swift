@@ -14,7 +14,6 @@ public extension CodeLanguage {
         .default,
         .agda,
         .bash,
-        .blade,
         .c,
         .cpp,
         .cSharp,
@@ -68,11 +67,6 @@ public extension CodeLanguage {
         tsName: "bash",
         extensions: ["sh", "bash"]
     )
-    
-    /// A language structure for `Blade`
-    static let blade: CodeLanguage = .init(id: .blade,
-                                           tsName: "blade",
-                                           extensions: ["blade.php", "blade"])
 
     /// A language structure for `C`
     static let c: CodeLanguage = .init(
